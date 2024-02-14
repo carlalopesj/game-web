@@ -1,0 +1,153 @@
+/*Fonte pixelada*/
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Black+Ops+One&family=DM+Serif+Display&family=Dela+Gothic+One&family=Kanit:ital,wght@0,400;1,200&family=Labrada:wght@100;200&family=Lato:wght@100;300;400;700&family=Martian+Mono:wght@200;400;600&family=Pacifico&family=Pixelify+Sans:wght@400..700&family=Raleway:wght@100;300&family=Ubuntu:wght@300;400;700&family=Young+Serif&display=swap');
+/*Zerando a página*/
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+}
+/*Estilização da página principal*/
+.pg-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px;
+    background-color: rgb(20, 20, 66);
+}
+
+div h1 {
+    font-size: 3rem;
+}
+
+div img {
+    width: auto;
+    height: 450px;
+    margin: 30px;
+    border-radius: 20px;
+}
+
+div p {
+    width: 50%;
+    margin: auto;
+}
+
+main i {
+    padding-right: 10px;
+}
+
+main #start {
+    background-color: #fdc00f;
+    padding: 10px;
+    width: 15%;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 3px solid #886c34;
+}
+
+main button:hover {
+    cursor: pointer;
+    background-color: #d8a714;
+}
+
+/*Parte escolha personagens*/
+.pg-personagem {
+    text-align: center;
+    padding: 80px;
+    background-color: rgb(20, 20, 66);
+    height: 100vh;
+}
+
+.escolha-personagem {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.escolha-personagem img {
+    width: auto;
+    height: 300px;
+}
+
+.escolha-personagem button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fdc00f;
+    font-size: 1.2rem;
+    border: 3px solid #886c34;
+}
+
+/*Cada personagem individual*/
+.arc {
+    background-color: green;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+.bruxa {
+    background-color: purple;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+.pirata {
+    background-color: brown;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+/*Parte do jogo*/
+.pg-jogo {
+    text-align: center;
+    padding: 80px;
+    background-image: url("image/Fundo-Praca.jpg");
+    height: 100vh;
+}
+
+.principal {
+    display: flex;
+    flex-direction: row;
+}
+
+.principal img {
+    margin-top: 50px;
+    width: 350px;
+    height: 380px;
+    border: 2px solid white;
+}
+
+.principal button {
+    margin-top: 10px;
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fdc00f;
+    font-size: 1.2rem;
+    border: 3px solid #886c34;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Coisa que faltam/ideias
+    - Altura da página
+    - Estilização
+    - Efeito/Animações
+    - Ver como usar o JS
+    - Tem como fazer botão pixelado?
+*/
