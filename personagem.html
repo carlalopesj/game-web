@@ -10,20 +10,25 @@
 <body>
     <main class="pg-personagem">
         <div>
+            <div class="info-player">
+                <p id="player-prata">0</p>
+                <p id="player-saude">0</p>
+                <p id="player-arma">0</p>
+            </div>
             <h1 id="titulo">Escolha o seu Personagem: </h1>
             <div class="escolha-personagem">
                 <div class="arc">
-                    <h2 class="categoria-personagem">Arqueiro</h2>
+                    <h2 class="categoria-personagem" id="c1">Arqueiro</h2>
                     <img id ="img1" src="image/Arc.jpg" alt="personagem-arc">
                     <div class="text-info-personagem">
                         <p>Saúde: 100</p>
                         <p>Prata: 100</p>
                     </div>
-                    <a href="./jogo.html" id="cacarola" onclick="cacarolaSelecionado()">Caçarola</a>
+                    <a id="cacarola" onclick="cacarolaSelecionado()">Caçarola</a>
                 </div>
                 <div class="bruxa">
-                    <h2 class="categoria-personagem">Feiticeira</h2>
-                    <img src="image/Bruxa.jpg" alt="personagem-bruxa">
+                    <h2 class="categoria-personagem" id="c2">Feiticeira</h2>
+                    <img id ="img2" src="image/Bruxa.jpg" alt="personagem-bruxa">
                     <div class="text-info-personagem">
                         <p>Saúde: 120</p>
                         <p>Prata: 80</p>
@@ -31,8 +36,8 @@
                     <a href="./jogo.html" id="verruguinha">Verruguinha</a>
                 </div>
                 <div class="pirata">
-                    <h2 class="categoria-personagem">Pirata</h2>
-                    <img src="image/Pirata.jpg" alt="personagem-pirata">
+                    <h2 class="categoria-personagem" id="c3">Pirata</h2>
+                    <img id ="img3" src="image/Pirata.jpg" alt="personagem-pirata">
                     <div class="text-info-personagem">
                         <p>Saúde: 80</p>
                         <p>Prata: 120</p>

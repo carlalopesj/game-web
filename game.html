@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b380cc3ad9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Joguinho</title>
+</head>
+<body class="estrutura">
+
+    <header class="cabecalho-jogo">
+        <button id="btn-voltar"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>Voltar</button>
+        <div class="info-jogador">
+            <p id="info-prata"><i class="fa-solid fa-heart" style="color: #ffffff;"></i></p>
+            <p id="info-saude"><i class="fa-solid fa-money-bill" style="color: #ffffff;"></i></p>
+            <p id="info-arma"><i class="fa-solid fa-gun" style="color: #ffffff;"></i>Graveto</p>
+        </div>
+    </header>
+
+    <main>
+        <h1 id="info-titulo">Escolha um personagem: </h1>
+        <div class="opcoes-escolha">
+            <div class="opcao1">
+                <h2 id="subtitulo-escolha1">Arqueiro</h2>
+                <img id ="img-1" src="image/arc-sem-fundo.png"/>
+                <div class="info-persona">
+                    <p class="prata-persona">Saúde: 100</p>
+                    <p class="saude-persona">Prata: 100</p>
+                </div>
+                <button id="btn-1" onclick="personagemCacarola()">Caçarola</button>
+            </div>
+            <div class="opcao2">
+                <h2 id="subtitulo-escolha2">Feiticeira</h2>
+                <img id ="img-2" src="image/bruxa-sem-fundo.png" />
+                <div class="info-persona">
+                    <p class="prata-persona">Saúde: 120</p>
+                    <p class="saude-persona">Prata: 80</p>
+                </div>
+                <button id="btn-2">Verruguinha</button>
+            </div>
+            <div class="opcao3">
+                <h2 id="subtitulo-escolha3">Pirata</h2>
+                <img id ="img-3" src="image/pirata-sem-fundo.png" />
+                <div class="info-persona">
+                    <p class="prata-persona">Saúde: 80</p>
+                    <p class="saude-persona">Prata: 120</p>
+                </div>
+                <button id="btn-3">Saca-Rolhas</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

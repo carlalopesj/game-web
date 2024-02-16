@@ -245,10 +245,95 @@ main #start:hover {
 
 }
 
+/*Testes*/
+.info-player {
+    display: none;
+}
 
+.estrutura {
+    background-image: url("image/fundo-principal.jpg");
+}
 
+.cabecalho-jogo {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+}
 
+.cabecalho-jogo i {
+    margin-right: 10px;
+}
 
+#btn-voltar {
+    width: 7%;
+    background-color: #fdc00f;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    height: 40px;
+}
+
+.info-jogador {
+    display: flex;
+    flex-direction: row;
+}
+
+.info-jogador p{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    margin-right: 30px;
+}
+
+#info-titulo {
+    text-align: center;
+    margin: 50px;
+}
+
+.opcoes-escolha {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin: 40px;
+}
+
+.opcoes-escolha h2 {
+    margin-top: 20px;
+}
+
+.opcoes-escolha img {
+    height: 260px;
+    width: 250px;
+    border: 2px solid white;
+}
+
+.info-persona p {
+    text-align: center;
+}
+
+.info-persona {
+    display: none;
+}
+
+.opcoes-escolha button {
+    margin-top: 20px;
+    width: 45%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fdc00f;
+    font-size: 1.2rem;
+    border: 3px solid #886c34;
+}
+
+.opcoes-escolha button:hover {
+    cursor: pointer;
+    background-color: #d3a10c;
+}
 
 
 
