@@ -245,6 +245,19 @@ main #start:hover {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Testes*/
 .info-player {
     display: none;
@@ -252,6 +265,7 @@ main #start:hover {
 
 .estrutura {
     background-image: url("image/fundo-principal.jpg");
+    background-size: cover;
 }
 
 .cabecalho-jogo {
@@ -266,12 +280,24 @@ main #start:hover {
     margin-right: 10px;
 }
 
+.btn-vh {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn-vh:hover {
+    cursor: pointer;
+}
+
 #btn-voltar {
-    width: 7%;
+    width: 100%;
     background-color: #fdc00f;
     border-radius: 10px;
     font-size: 1.2rem;
     height: 40px;
+    padding: 5px;
+    margin-right: 20px;
 }
 
 .info-jogador {
@@ -330,7 +356,7 @@ main #start:hover {
     border: 3px solid #886c34;
 }
 
-.opcoes-escolha button:hover {
+.opcoes-escolha button:hover, #btn-voltar:hover {
     cursor: pointer;
     background-color: #d3a10c;
 }

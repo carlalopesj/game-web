@@ -10,11 +10,15 @@
 <body class="estrutura">
 
     <header class="cabecalho-jogo">
-        <button id="btn-voltar"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>Voltar</button>
+        <div class="btn-vh">
+            <button id="btn-voltar"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>Voltar</button>
+            <i id="btn-home" class="fa-solid fa-house-chimney" style="color: #ffffff;"></i>
+        </div>
         <div class="info-jogador">
-            <p id="info-prata"><i class="fa-solid fa-heart" style="color: #ffffff;"></i></p>
-            <p id="info-saude"><i class="fa-solid fa-money-bill" style="color: #ffffff;"></i></p>
-            <p id="info-arma"><i class="fa-solid fa-gun" style="color: #ffffff;"></i>Graveto</p>
+            <i class="fa-solid fa-droplet" style="color: #ffffff;"></i> <p id="info-xp"></p>
+            <i class="fa-solid fa-heart" style="color: #ffffff;"></i><p id="info-saude"></p>
+            <i class="fa-solid fa-money-bill" style="color: #ffffff;"></i><p id="info-prata"></p>
+            <i class="fa-solid fa-gun" style="color: #ffffff;"></i><p id="info-arma">Graveto</p>
         </div>
     </header>
 
@@ -28,7 +32,7 @@
                     <p class="prata-persona">Saúde: 100</p>
                     <p class="saude-persona">Prata: 100</p>
                 </div>
-                <button id="btn-1" onclick="personagemCacarola()">Caçarola</button>
+                <button id="btn-1">Catatau</button>
             </div>
             <div class="opcao2">
                 <h2 id="subtitulo-escolha2">Feiticeira</h2>
