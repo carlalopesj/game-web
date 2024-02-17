@@ -314,6 +314,12 @@ main #start:hover {
     margin-right: 30px;
 }
 
+.stts-monstro {
+    display: none;
+    flex-direction: row;
+    gap: 100px;
+}
+
 #info-titulo {
     text-align: center;
     margin: 50px;

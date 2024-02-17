@@ -3,6 +3,7 @@ let prata = 0;
 let saude = 0;
 let xp = 0;
 let lutando = 0;
+let saudeMonstro;
 let arma_atual = 0;
 let mochila = ["Graveto"];
 
@@ -15,6 +16,10 @@ const xp_text = document.querySelector('#info-xp');
 const prata_text = document.querySelector('#info-prata');
 const saude_text = document.querySelector('#info-saude');
 const arma_text = document.querySelector('#info-arma');
+
+const stts_monstro = document.querySelector('.stts-monstro');
+const nome_monstro = document.querySelector('#nome-monstro');
+const saude_monstro = document.querySelector('#saude-monstro');
 
 const titulo = document.querySelector('#info-titulo');
 const subtitulo_1 = document.querySelector('#subtitulo-escolha1');
@@ -64,7 +69,7 @@ const referencias = [
     {
         nome: "caverna",
         subtitulo: ["Monstro lv1", "Monstro lv2", "Dragão"],
-        btn_texto: ["Piruba", "Catatau", "Dragão"],
+        btn_texto: ["Piruba", "Cazabin", "Dragão"],
         imagem: ['image/monst-1.jpg', 'image/monst-2.jpg', 'image/dragao.jpg'],
         btn_funcao: [lutarMonstro1, lutarMonstro2, lutarDragao]
     },
@@ -77,13 +82,13 @@ const referencias = [
         btn_funcao: [roletar, adivinhar, trocar]
     },
 
-    /*
     {
         nome: "lutar",
-        "btn-texto": ["Atacar", "Desviar", "Correr"],
-        "btn-funcao": [atacar, desviar, correr]
-    }
-    */
+        subtitulo: ["Atacar", "Desviar", "Correr"],
+        btn_texto: ["Atacar", "Desviar", "Correr"],
+        imagem: ['image/fundo-loja-clara.jpg', 'image/fundo-arena-clara.jpg', 'image/fundo-missoes-clara.jpg' ],
+        btn_funcao: [atacar, desviar, correr]
+    },
 
     {
         nome: "personagem",
@@ -91,6 +96,30 @@ const referencias = [
         btn_texto: ["Catatau", "Verruguinha", "Saca-Rolhas"],
         imagem: ['image/arc-sem-fundo.png', 'image/bruxa-sem-fundo.png', 'image/pirata-sem-fundo.png'],
         btn_funcao: [personagemCazabin, personagemVerruguinha, personagemSacaRolhas]
+    },
+
+    {
+        nome: "kill monstro",
+        subtitulo: ["Praça", "Praça", "Praça"],
+        btn_texto: ["Praça", "Praça", "Praça"],
+        imagem: ['image/fundo-praca-clara.jpg', 'image/fundo-praca-clara.jpg', 'image/fundo-praca-clara.jpg'],
+        btn_funcao: [irPraca, irPraca, irPraca]
+    },
+
+    {
+        nome: "perdeu",
+        subtitulo: ["Replay?", "Replay?", "Replay?"],
+        btn_texto: ["Replay", "Replay", "Replay"],
+        imagem: ['image/arc-sem-fundo.png', 'image/bruxa-sem-fundo.png', 'image/pirata-sem-fundo.png'],
+        btn_funcao: [startGame, startGame, startGame]
+    },
+
+    {
+        nome: "ganhou",
+        subtitulo: ["Replay?", "Replay?", "Replay?"],
+        btn_texto: ["Replay", "Replay", "Replay"],
+        imagem: ['image/arc-sem-fundo.png', 'image/bruxa-sem-fundo.png', 'image/pirata-sem-fundo.png'],
+        btn_funcao: [startGame, startGame, startGame]
     }
 ]
 
@@ -186,7 +215,7 @@ function irMissao() {
 }
 
 function irPersonagens() {
-    atualizar(referencias[4]);
+    atualizar(referencias[5]);
     body.style.backgroundImage = "url(image/Fundo-principal.jpg)";
     titulo.innerText = "Escolha um personagem: ";
     prata = 0;
@@ -199,9 +228,12 @@ function irPersonagens() {
 }
 
 function lutar() {
-    
+    stts_monstro.style.display = 'flex';
+    atualizar(referencias[4]);
+    saudeMonstro = monstros[lutando].saudeM;
+    nome_monstro.innerText = monstros[lutando].nome;
+    saude_monstro.innerText = saudeMonstro;
 }
-
 
 //Funções dentro do jogo - Comprar
 function comprarSaude() {
@@ -213,8 +245,6 @@ function comprarSaude() {
         saude += 10;
         saude_text.innerText = saude;
     }
-
-
 }
 
 function comprarXp() {
@@ -244,15 +274,56 @@ function comprarArma() {
 //Funções dentro do jogo - Caverna
 function lutarMonstro1() {
     console.log('Monstro 1- Clicado');
-    
+    lutando = 0;
+    lutar();
 }
 
 function lutarMonstro2() {
-    console.log('Clicado');
+    console.log('Mosntro 2- Clicado');
+    lutando = 1;
+    lutar();
 }
 
 function lutarDragao() {
-    console.log('Clicado');
+    console.log('Dg - Clicado');
+    lutando = 2;
+    lutar();
+}
+
+//Funções dentro do jogo - lutar
+function atacar() {
+    saude -= getValorAtaqueMonstro(monstros[lutando].level);
+    if (monstroHit()) {
+        saudeMonstro -= armas[arma_atual].poder + Math.floor(Math.random() * xp) + 1;
+    }
+    saude_text.innerText = saude;
+    saude_monstro.innerText = saudeMonstro;
+    if (saude <= 0) {
+        perdeu();
+    } else if (lutando === 2) {
+        venceu();
+    } else {
+        destruirMonstro();
+    }
+}
+
+//Funções dentro da função atacar
+function getValorAtaqueMonstro(level) {
+    const hit = (level * 5) - (Math.floor(Math.random() * xp));
+    console.log(hit);
+    return hit > 0 ? hit : 0;
+}
+
+function monstroHit() {
+    return Math.random() > .2 || saude < 20;
+}
+
+function desviar() {
+    
+}
+
+function correr() {
+    irPraca();
 }
 
 //Funções dentro do jogo - Missões
@@ -268,6 +339,7 @@ function trocar() {
     console.log('Clicado');
 }
 
+//Função para começar/reiniciar o jogo
 function startGame() {
 
     cabecalho_jogo.style.display = 'flex';
@@ -283,4 +355,19 @@ function startGame() {
 
 }
 
+//Funções para declara vitoria, perda ou destruição do monstro
+function destruirMonstro() {
+    prata += Math.floor(monstros[lutando].level * 6.7);
+    xp += monstros[lutando].level;
+    prata_text.innerText = prata;
+    xp_text.innerText = xp;
+    atualizar(referencias[6]);
+}
 
+function perdeu() {
+    atualizar(referencias[7]);
+}
+
+function ganhou() {
+    atualizar(referencias[8]);
+}
