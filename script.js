@@ -7,7 +7,6 @@ let saudeMonstro;
 let arma_atual = 0;
 let mochila = ["Graveto"];
 
-
 const body = document.querySelector('.estrutura');
 const cabecalho_jogo = document.querySelector('.cabecalho-jogo');
 const btn_voltar = document.querySelector('#btn-voltar');
@@ -170,7 +169,6 @@ function personagemSacaRolhas() {
     startGame();
 }
 
-
 //Função para atualizar as informações na tela de acordo com o objeto referenciado
 function atualizar(referencia) {
     subtitulo_1.innerText = referencia["subtitulo"][0];
@@ -242,7 +240,6 @@ function lutar() {
 //Funções dentro do jogo - Comprar
 function comprarSaude() {
     console.log('Saude - Clicado');
-
     if (prata >= 10) {
         prata -= 10;
         prata_text.innerText = prata;
@@ -253,7 +250,6 @@ function comprarSaude() {
 
 function comprarXp() {
     console.log('Xp - Clicado');
-
     if (prata >= 5) {
         prata -= 5;
         prata_text.innerText = prata;
@@ -333,12 +329,10 @@ function correr() {
 //Funções dentro do jogo - Missões
 function adivinhar() {
     console.log('Clicado');
-
 }
 
 //Função para começar/reiniciar o jogo
 function startGame() {
-
     cabecalho_jogo.style.display = 'flex';
     body.style.backgroundImage = "url(image/Fundo-Praca.jpg)";
 
@@ -350,6 +344,7 @@ function startGame() {
 
     btn_voltar.style.display = 'none';
 
+    stts_monstro.style.display = 'none';
 }
 
 //Funções para declara vitoria, perda ou destruição do monstro
