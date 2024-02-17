@@ -54,7 +54,7 @@ const referencias = [
         nome: "praça central",
         subtitulo: ["Loja", "Arena", "Missões"],
         btn_texto: ["Lojinha", "Caverna", "Ganha-Pão"],
-        imagem: ['image/fundo-loja-clara.jpg', 'image/fundo-arena-clara.jpg', 'image/fundo-missoes-clara.jpg' ],
+        imagem: ['image/fundo-loja-clara.jpg', 'image/fundo-arena-clara.jpg', 'image/fundo-missoes-clara.jpg'],
         btn_funcao: [irLoja, irCaverna, irMissao]
     },
 
@@ -62,7 +62,7 @@ const referencias = [
         nome: "loja",
         subtitulo: ["Saúde", "XP", "Arma"],
         btn_texto: ["+10 Saúde", "+5 XP", "Arma"],
-        imagem: ['image/fundo-loja-clara.jpg', 'image/fundo-arena-clara.jpg', 'image/fundo-missoes-clara.jpg' ],
+        imagem: ['image/saude-pixel.png', 'image/xp-pixel.png', 'image/espada-pixel.png'],
         btn_funcao: [comprarSaude, comprarXp, comprarArma]
     },
 
@@ -76,17 +76,17 @@ const referencias = [
 
     {
         nome: "missao",
-        subtitulo: ["Roleta", "Adivinha", "Troca"],
-        imagem: ['image/fundo-loja-clara.jpg', 'image/fundo-arena-clara.jpg', 'image/fundo-missoes-clara.jpg' ],
-        btn_texto: ["Roleta", "Adivinha", "Troca"],
-        btn_funcao: [roletar, adivinhar, trocar]
+        subtitulo: ["1", "2", "3"],
+        imagem: ['image/fundo-adivinhar1.png', 'image/fundo-adivinhar2.png', 'image/fundo-adivinhar3.png'],
+        btn_texto: ["1", "2", "3"],
+        btn_funcao: [adivinhar, adivinhar, adivinhar]
     },
 
     {
         nome: "lutar",
         subtitulo: ["Atacar", "Desviar", "Correr"],
         btn_texto: ["Atacar", "Desviar", "Correr"],
-        imagem: ['image/fundo-loja-clara.jpg', 'image/fundo-arena-clara.jpg', 'image/fundo-missoes-clara.jpg' ],
+        imagem: ['image/atacar-pixel.png', 'image/desviar-pixel.png', 'image/fundo-praca-clara.jpg' ],
         btn_funcao: [atacar, desviar, correr]
     },
 
@@ -110,16 +110,16 @@ const referencias = [
         nome: "perdeu",
         subtitulo: ["Replay?", "Replay?", "Replay?"],
         btn_texto: ["Replay", "Replay", "Replay"],
-        imagem: ['image/arc-sem-fundo.png', 'image/bruxa-sem-fundo.png', 'image/pirata-sem-fundo.png'],
-        btn_funcao: [startGame, startGame, startGame]
+        imagem: ['image/fundo-reset.png', 'image/fundo-reset.png', 'image/fundo-reset.png'],
+        btn_funcao: [irPersonagens, irPersonagens, irPersonagens]
     },
 
     {
         nome: "ganhou",
         subtitulo: ["Replay?", "Replay?", "Replay?"],
         btn_texto: ["Replay", "Replay", "Replay"],
-        imagem: ['image/arc-sem-fundo.png', 'image/bruxa-sem-fundo.png', 'image/pirata-sem-fundo.png'],
-        btn_funcao: [startGame, startGame, startGame]
+        imagem: ['image/fundo-teste.png', 'image/fundo-teste.png', 'image/fundo-teste.png'],
+        btn_funcao: [irPersonagens, irPersonagens, irPersonagens]
     }
 ]
 
@@ -191,6 +191,9 @@ function atualizar(referencia) {
 function irPraca() {
     atualizar(referencias[0]);
     btn_voltar.style.display = 'none';
+    body.style.backgroundImage = "url(image/Fundo-Praca.jpg)";
+    titulo.innerText = "Qual o seu destino?";
+    stts_monstro.style.display = 'none';
 }
 
 function irLoja() {
@@ -228,6 +231,7 @@ function irPersonagens() {
 }
 
 function lutar() {
+    titulo.innerText = "Faça sua jogada"
     stts_monstro.style.display = 'flex';
     atualizar(referencias[4]);
     saudeMonstro = monstros[lutando].saudeM;
@@ -327,16 +331,9 @@ function correr() {
 }
 
 //Funções dentro do jogo - Missões
-function roletar() {
-    console.log('Clicado');
-}
-
 function adivinhar() {
     console.log('Clicado');
-}
 
-function trocar() {
-    console.log('Clicado');
 }
 
 //Função para começar/reiniciar o jogo
