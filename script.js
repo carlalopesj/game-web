@@ -141,6 +141,7 @@ function personagemCazabin() {
 
     irPraca();
     startGame();
+    info_persona.style.display = 'none';
 }
 
 function personagemVerruguinha() {
@@ -154,6 +155,7 @@ function personagemVerruguinha() {
 
     irPraca();
     startGame();
+    info_persona.style.display = 'none';
 }
 
 function personagemSacaRolhas() {
@@ -167,6 +169,7 @@ function personagemSacaRolhas() {
 
     irPraca();
     startGame();
+    info_persona.style.display = 'none';
 }
 
 //Função para atualizar as informações na tela de acordo com o objeto referenciado
@@ -192,6 +195,7 @@ function irPraca() {
     body.style.backgroundImage = "url(image/Fundo-Praca.jpg)";
     titulo.innerText = "Qual o seu destino?";
     stts_monstro.style.display = 'none';
+    info_persona.style.display = 'none';
 }
 
 function irLoja() {
@@ -226,6 +230,7 @@ function irPersonagens() {
     saude_text.innerText = saude;
     xp_text.innerText = xp;
     cabecalho_jogo.style.display = 'none';
+    info_persona.style.display = 'block';
 }
 
 function lutar() {
@@ -340,7 +345,7 @@ function startGame() {
     
     atualizar(referencias[0]);
 
-    info_persona.style.display = 'none';
+    //info_persona.style.display = 'none';
 
     btn_voltar.style.display = 'none';
 
@@ -363,3 +368,5 @@ function perdeu() {
 function ganhou() {
     atualizar(referencias[8]);
 }
+
+//arrumar o info-persona

@@ -183,12 +183,14 @@ main #start:hover {
         width: 40%;
     }
 
+    
+
     /*Escolha seu personagem*/
 
     /*Parte dos jogos - cabeçalho*/
 
+    /*Arrastar pro lado?*/
 }
-
 
 
 
@@ -311,7 +313,18 @@ main #start:hover {
     background-color: #d3a10c;
 }
 
+/*Responsividade*/
+@media screen and (max-width: 768px) { 
 
+    .opcoes-escolha {
+        flex-direction: column;
+    }
+    .cabecalho-jogo, .cabecalho-jogo p {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+}
 
 
 /*Coisa que faltam/ideias
@@ -320,4 +333,5 @@ main #start:hover {
     - Efeito/Animações
     - Ver como usar o JS
     - Tem como fazer botão pixelado?
+    - Arrastar pro lado?
 */
