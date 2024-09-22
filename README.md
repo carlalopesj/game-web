@@ -17,5 +17,5 @@ Um pouco do resultado:
 
 OBS: 
 - Não está finalizado, faltando ainda citar histórias, tutorial, mas já dá pra se divertir :)
-- Estou desenvolvedendo ele novamente utilizando o React
+- Estou desenvolvedendo ele novamente utilizando o React, veja em: https://github.com/carlalopesj/dragon-flames
 
